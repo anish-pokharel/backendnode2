@@ -15,29 +15,29 @@ router.get('/',(req,res)=>{
     })
 
 })
-router.post('/',async (req,res)=>{
-//     Employee.create(req,res)
-//     .then(data=> res.send(data))
-//     .catch(err=>console.log(err))
-// }
-try{
-    // const newEmployee =new Employee(req.body);
-    const newEmployee =new Employee({
-        fullName:req.body.fullName,
-        position:req.body.position,
-        location:req.body.location,
-        salary:req.body.salary
-    });
-    await newEmployee.save();
-    res.status(200).json({message:'Message sent'})
-    // const savedEmployee=await newEmployee.save()
-    // res.json(savedEmployee)
-}catch(error){
-    res.statusCode(500).json({error:error.message});
-}
-
-
+router.post('/postdata',async (req,res)=>{
+    Employee.create(req,res)
+    .then(data=> res.send(data))
+    .catch(err=>console.log(err))
 })
+// try{
+//     // const newEmployee =new Employee(req.body);
+//     const newEmployee =new Employee({
+//         fullName:req.body.fullName,
+//         position:req.body.position,
+//         location:req.body.location,
+//         salary:req.body.salary
+//     });
+//     await newEmployee.save();
+//     res.status(200).json({message:'Message sent'})
+//     // const savedEmployee=await newEmployee.save()
+//     // res.json(savedEmployee)
+// }catch(error){
+//     res.statusCode(500).json({error:error.message});
+// }
+
+
+// })
 
 
 module.exports= router;

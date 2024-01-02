@@ -11,14 +11,9 @@ const employeeRoutes= require('./controller/employee.controller')
 app.use(bodyParser.json())
 app.use('/api/employee',employeeRoutes)
 
-
-
-
 http.createServer(function (req, res) {
-    
-
     // res.end();
-        res.end('server is started hai');
+    res.end('server is started hai');
     }).listen(8080);
 
 
